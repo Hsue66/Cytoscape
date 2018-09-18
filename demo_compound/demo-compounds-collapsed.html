@@ -1,0 +1,32 @@
+<!DOCTYPE>
+
+<html>
+
+	<head>
+		<title>cytoscape-expand-collapse.js demo</title>
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../style/style.css">
+                <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="https://unpkg.com/cytoscape@3.1.0/dist/cytoscape.min.js"></script>
+
+		<!-- for testing with local version of cytoscape.js -->
+		<!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
+		<script src="https://unpkg.com/cytoscape-cose-bilkent@4.0.0/cytoscape-cose-bilkent.js"></script>
+		<script src="https://unpkg.com/cytoscape-expand-collapse@3.1.1/cytoscape-expand-collapse.js"></script>
+		<script src="cyto.js"></script>
+
+	</head>
+
+	<body>
+		<h1>demo</h1>
+			<!--<b id="collapseAll"><img class="btn-img" src="collapse.png"></b>
+			<b id="expandAll"><img class="btn-img" src="expand.png"></b> -->
+			<b id="collapseAll" style="cursor: pointer; border-style: solid; margin-right:50px;">Collapse all</b>
+			<b id="expandAll" style="cursor: pointer; border-style: solid;">Expand all</b> <br/>
+
+		<div id="cy"></div>
+
+	</body>
+
+</html>
