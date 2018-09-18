@@ -199,7 +199,7 @@ $(function() { // on dom ready
     function sethighlightEdge(node){
       var nowList = node.data('topic');
       for(var now in nowList){
-        color = getRandomColor()
+        color = getRandomColor();
         node.successors().each(
           function(e){
             if(e.isEdge() && e.data('topic').includes(nowList[now])){
