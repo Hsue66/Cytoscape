@@ -1,5 +1,26 @@
-document.addEventListener('DOMContentLoaded', function() {
+var queryInput = new Vue({
+  el:'#queryInput',
+  data:{
+    query:''
+  },
+  methods:{
+    sendQuery: function(event){
+      alert('Searching for '+this.query)
+    }
+  }
+});
 
+var articleData = {
+  title:'TITLE',
+  date:'2017-03-30',
+  contents: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+
+var article = new Vue({
+  el:'#article',
+  data: articleData
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     var cy = window.cy = cytoscape({
         container: document.getElementById('cy'),
 
@@ -16,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 id: 'k',
                                 name: "Moon to discuss economic cooperation, denuclearization with Putin",
                                 parent: 'B',
-                                topic:['moon']
+                                topic:['moon'],
+                                date:'2017',
+                                contents:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor'
                             }
                         },
                         {
@@ -37,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             data: {
                                 id: 'c',
                                 name: "Korea hasn't scored a goal, Son Heung-min has",
-                                topic:['soccer','moon']
+                                topic:['soccer','moon'],
+                                date:'2017',
+                                contents:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor'
                             }
                         },
                         {
@@ -299,6 +324,15 @@ document.addEventListener('DOMContentLoaded', function() {
         node.addClass('short');
         removehighlightEdge(event.cy);
     });
+
+    cy.on('tap', 'node', function(event) {
+        var node = event.target;
+        articleData.content = node.data('contents');
+        articleData.title = node.data('name');
+        articleData.date = node.data('date');
+    });
+
+
 
     var api = cy.expandCollapse('get');
 

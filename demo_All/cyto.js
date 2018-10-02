@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     var cy = window.cy = cytoscape({
         container: document.getElementById('cy'),
 
@@ -16,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 id: 'k',
                                 name: "Moon to discuss economic cooperation, denuclearization with Putin",
                                 parent: 'B',
-                                topic:['moon']
+                                topic:['moon'],
+                                date:'2017',
+                                contents:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor'
                             }
                         },
                         {
@@ -37,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             data: {
                                 id: 'c',
                                 name: "Korea hasn't scored a goal, Son Heung-min has",
-                                topic:['soccer','moon']
+                                topic:['soccer','moon'],
+                                date:'2017',
+                                contents:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor'
                             }
                         },
                         {
@@ -290,6 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(node.id());
         node.removeClass('short');
         node.addClass('long');
+        console.log(hello)
         sethighlightEdge(node);
     });
 
@@ -299,6 +303,17 @@ document.addEventListener('DOMContentLoaded', function() {
         node.addClass('short');
         removehighlightEdge(event.cy);
     });
+
+    let content='hi';
+    exports.content = content;
+    
+    cy.on('tap', 'node', function(event) {
+        var node = event.target;
+        hello = node.data('contents');
+        console.log(hello)
+    });
+
+
 
     var api = cy.expandCollapse('get');
 

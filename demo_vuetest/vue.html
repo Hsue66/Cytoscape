@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> VUE TEST </title>
+  </head>
+  <body>
+    <div id="app-7">
+      <ol>
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id">
+        </todo-item>
+      </ol>
+    </div>
+
+    <div id="app-71">
+      <ol>
+        <todo-item
+          v-for="item in BookList"
+          v-bind:todo="item"
+          v-bind:key="item.id">
+        </todo-item>
+      </ol>
+    </div>
+
+    <div id="app-6">
+      <p>{{message}}</p>
+      <input v-model="message">
+    </div>
+
+    <div id="app-5">
+      <p>{{message}}</p>
+      <button v-on:click="reverseMessage">Flip Message</button>
+    </div>
+
+    <div id = "app">
+      <h1> Hello {{name}}</h1>
+    </div>
+
+    <div id="app-2">
+      <span v-bind:title="message">
+        내 위에 잠시 마우스를 올리면 동적으로 바인딩 된 title을 볼 수 있습니다!
+      </span>
+    </div>
+
+    <div id = "app-3">
+        <p v-if="seen">NOW YOU CAN SEE ME!</p>
+    </div>
+
+    <div id = "app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{todo.text}}
+          </li>
+        </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="vuetest.js"></script>
+  </body>
+</html>
