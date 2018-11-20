@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>NC news Map</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="https://unpkg.com/cytoscape@3.1.0/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/cytoscape-cose-bilkent@4.0.0/cytoscape-cose-bilkent.js"></script>
+    <script src="https://unpkg.com/cytoscape-expand-collapse@3.1.1/cytoscape-expand-collapse.js"></script>
+    <script src="cytoscape-node-html-label.js"></script>
+    <script src="sampledata.js"></script>
+
+  </head>
+  <body>
+    <div class="page">
+      <div class="col-grid">
+        <div class="left"></div>
+        <div class="center">
+          <div class="title">
+            <h1>multiple Labels</h1>
+            <div class="btn">
+              <button type="button" id="expandAll">ExpandAll</button>
+              <button type="button" id="collapseAll">CollapseAll</button>
+            </div>
+          </div>
+          <div class="map" id="cy"></div>
+          <div class="footer"></div>
+        </div>
+        <div class="right"></div>
+      </div>
+    </div>
+    <script src="cyto.js"></script>
+  </body>
+</html>
